@@ -1,0 +1,19 @@
+def new_record?
+  sync_with_transaction_state
+  @new_record
+end
+
+
+<%= form_for @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_area :details , size: "60*12" %>
+  <% unless @task.new_record? %>
+    <%= f.check_box :completed %>
+    <%= label_tag(:completed, "I completed the task") %>
+  <% end %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+
