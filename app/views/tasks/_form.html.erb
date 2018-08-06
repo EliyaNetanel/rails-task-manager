@@ -1,7 +1,7 @@
-def new_record?
-  sync_with_transaction_state
-  @new_record
-end
+<% def new_record? %>
+  <% sync_with_transaction_state %>
+  <% @new_record %>
+<% end %>
 
 
 <%= form_for @task do |f| %>
